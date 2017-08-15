@@ -48,10 +48,11 @@ module Facebook
           Facebook::Messenger::Bot.deliver(payload, access_token: access_token)
         end
 
-        def reply(message)
+        def reply(message, tag=nil)
           payload = {
             recipient: sender,
-            message: message
+            message: message,
+            tag: tag
           }
 
           Facebook::Messenger::Bot.deliver(payload, access_token: access_token)
