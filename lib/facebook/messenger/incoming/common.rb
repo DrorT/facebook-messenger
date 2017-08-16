@@ -54,8 +54,8 @@ module Facebook
             message: message,
             tag: tag
           }
-          puts "sending:"
-          puts payload
+          Rails.logger.debug "sending:"
+          Rails.logger.debug payload
 
           Facebook::Messenger::Bot.deliver(payload, access_token: access_token)
         end
